@@ -1,0 +1,32 @@
+button {
+    background: none;
+    border: 2px solid #fff;
+    border-radius: 50%;
+
+    width: 37px;
+    height: 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        fill: #fff;
+        width: 25px;
+        height: 25px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-359deg);
+    }
+}
