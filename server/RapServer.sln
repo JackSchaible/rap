@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapServer", "RapServer.csproj", "{FDE825FA-902B-40DB-BB9F-110E7199FCFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RapServer", "RapServer.csproj", "{FDE825FA-902B-40DB-BB9F-110E7199FCFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rap.Data", "..\Rap.Data\Rap.Data.csproj", "{901906A1-CF53-48AB-BF60-28A3BE7B9B2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{FDE825FA-902B-40DB-BB9F-110E7199FCFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDE825FA-902B-40DB-BB9F-110E7199FCFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDE825FA-902B-40DB-BB9F-110E7199FCFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{901906A1-CF53-48AB-BF60-28A3BE7B9B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{901906A1-CF53-48AB-BF60-28A3BE7B9B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{901906A1-CF53-48AB-BF60-28A3BE7B9B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{901906A1-CF53-48AB-BF60-28A3BE7B9B2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

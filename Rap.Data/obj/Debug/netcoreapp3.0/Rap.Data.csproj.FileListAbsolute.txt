@@ -1,0 +1,5 @@
+C:\dev\rap\Rap.Data\bin\Debug\netcoreapp3.0\Rap.Data.deps.json
+C:\dev\rap\Rap.Data\bin\Debug\netcoreapp3.0\Rap.Data.dll
+C:\dev\rap\Rap.Data\obj\Debug\netcoreapp3.0\Rap.Data.csprojAssemblyReference.cache
+C:\dev\rap\Rap.Data\obj\Debug\netcoreapp3.0\Rap.Data.AssemblyInfoInputs.cache
+C:\dev\rap\Rap.Data\obj\Debug\netcoreapp3.0\Rap.Data.AssemblyInfo.cs
