@@ -8,5 +8,5 @@ export class Flight {
     public link: string;
     public landed: boolean;
     public reused: boolean;
-    public withReddit: boolean;
+    public reddit: boolean;
 }

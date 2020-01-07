@@ -16,16 +16,16 @@ import { StateService } from "../shared/services/state.service";
         trigger("rotatingState", [
             state("default", style({ animation: "" })),
             state(
-                "rotating",
+                "loading",
                 style({ animation: "rotation 2s infinite linear" })
             ),
-            transition("rotating => default", animate("400ms ease-out")),
-            transition("default => rotating", animate("400ms ease-in"))
+            transition("loading => default", animate("400ms ease-out")),
+            transition("default => loading", animate("400ms ease-in"))
         ])
     ]
 })
 export class RefreshButtonComponent {
-    constructor(private stateService: StateService) {}
+    constructor(public stateService: StateService) {}
 
     public handleClick() {
         this.stateService.refresh();

@@ -1,0 +1,58 @@
+@import "../../styles/_vars.scss";
+
+.header,
+.row {
+	width: 100%;
+
+	display: flex;
+
+	div {
+
+		&.grow {
+			flex-grow: 1;
+		}
+
+		padding: 0 1rem;
+
+		p {
+
+			white-space: nowrap;
+		}
+	}
+}
+
+.header {
+	background: linear-gradient($light-blue, $white);
+
+	p {
+		font-weight: 600;
+		color: $dark-blue;
+	}
+}
+
+.row {
+	display: flex;
+	background-color: rgba(255, 255, 255, 0.95);
+	border-radius: 7px;
+	margin-top: 0.75rem;
+
+	p {
+		color: $grey;
+	}
+
+	div:last-child {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		svg {
+			width: 21px;
+			height: 21px;
+
+
+			path {
+				fill: $blue;
+			}
+		}
+	}
+}

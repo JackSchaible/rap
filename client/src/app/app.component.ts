@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { StateService } from "./shared/services/state.service";
 
 @Component({
@@ -6,6 +6,10 @@ import { StateService } from "./shared/services/state.service";
     templateUrl: "./app.component.html",
     styleUrls: ["./app.component.scss"]
 })
-export class AppComponent {
-    constructor(private state: StateService) {}
+export class AppComponent implements OnInit {
+    constructor(public state: StateService) {}
+
+    public ngOnInit() {
+        this.state.refresh();
+    }
 }

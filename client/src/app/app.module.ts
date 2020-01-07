@@ -6,14 +6,18 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { RefreshButtonComponent } from "./refresh-button/refresh-button.component";
 import { HttpClientModule } from "@angular/common/http";
+import { CheckboxComponent } from "./checkbox/checkbox.component";
+import { FormsModule } from "@angular/forms";
+import { TableComponent } from './table/table.component';
 
 @NgModule({
-    declarations: [AppComponent, RefreshButtonComponent],
+    declarations: [AppComponent, RefreshButtonComponent, CheckboxComponent, TableComponent],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         MobxAngularModule,
         HttpClientModule,
+        FormsModule,
         AppRoutingModule
     ],
     providers: [],

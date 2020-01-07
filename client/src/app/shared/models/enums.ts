@@ -1,4 +1,4 @@
 export enum State {
-    Default,
-    Loading
+    Default = "default",
+    Loading = "loading"
 }

@@ -1,0 +1,16 @@
+@font-face {
+	font-family: "geomanist";
+	src: url("~/assets/fonts/geomanist-regular-webfont.woff2") format("woff2");
+}
+
+h1,
+label,
+p {
+	color: $white;
+	font-family: $geomanist;
+}
+
+h1 {
+	font-size: rem(64px);
+	font-weight: 100;
+}

@@ -1,4 +1,28 @@
+@import "./_vars.scss";
+@import "./_fonts.scss";
+@import "./_tools.scss";
+
 body {
-    background-image: url("~/assets/background.jpg");
-    background-size: cover;
+	background-image: url("~/assets/background.jpg");
+	background-size: cover;
+}
+
+main {
+	margin: 0 auto;
+
+	@include breakpoint-sm-max {
+		max-width: 960px;
+	}
+
+	@include breakpoint-md-max {
+		max-width: 1024px;
+	}
+
+	@include breakpoint-lg-max {
+		max-width: 1088px;
+	}
+
+	@include breakpoint-xl {
+		max-width: 1152px;
+	}
 }

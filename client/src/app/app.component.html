@@ -7,9 +7,10 @@
 		<div class="spacer"></div>
 
 		<div>
-			<label><input type="checkbox" /> Land Success</label>
-			<label><input type="checkbox" /> Reused</label>
-			<label><input type="checkbox" /> With Reddit</label>
+			<app-checkbox label="Land Success" [(checked)]="state.filterOptions.landed"></app-checkbox>
+			<app-checkbox label="Reused" [(checked)]="state.filterOptions.reused"></app-checkbox>
+			<app-checkbox label="With Reddit" [(checked)]="state.filterOptions.reddit"></app-checkbox>
 		</div>
 	</header>
+	<app-table></app-table>
 </main>
