@@ -1,10 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Rap.Data\**" />
+    <Content Remove="Rap.Data\**" />
+    <EmbeddedResource Remove="Rap.Data\**" />
+    <None Remove="Rap.Data\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="Rap.Data\Rap.Data.csproj" />
   </ItemGroup>
 
 </Project>
