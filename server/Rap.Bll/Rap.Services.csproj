@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Rap.Models\Rap.Models.csproj" />
-    <ProjectReference Include="..\server\Rap.Data\Rap.Data.csproj" />
+    <ProjectReference Include="..\Rap.Data\Rap.Data.csproj" />
   </ItemGroup>
 
 </Project>

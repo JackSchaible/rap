@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Rap.Bll\Rap.Services.csproj" />
+    <ProjectReference Include="Rap.Bll\Rap.Services.csproj" />
     <ProjectReference Include="Rap.Data\Rap.Data.csproj" />
   </ItemGroup>
 
