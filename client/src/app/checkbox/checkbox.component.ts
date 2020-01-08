@@ -15,11 +15,7 @@ export class CheckboxComponent {
 
     constructor(private state: StateService) {}
 
-    public change(evt: Event) {
-        this.state.changeFilter(
-            this.propertyToFilter,
-            //TODO: this is always on
-            (evt.target as any).value === "on"
-        );
+    public change() {
+        this.state.changeFilter(this.propertyToFilter);
     }
 }

@@ -40,9 +40,9 @@ export class StateService {
     }
 
     @action()
-    public changeFilter(property: string, on: boolean) {
+    public changeFilter(property: string) {
         this.state = State.Loading;
-        this.filterOptions[property] = on;
+        this.filterOptions[property] = !this.filterOptions[property];
 
         this.http.filter(this.filterOptions).subscribe(
             (flights: Flight[]) => this.handleResults(flights),
