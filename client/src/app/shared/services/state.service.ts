@@ -69,9 +69,12 @@ export class StateService {
     @action()
     public refresh() {
         this.state = State.Loading;
-        console.log("getting listing");
         this.http.getListing().subscribe(
-            (flights: any[]) => (this.allFlights = flights),
+            (flights: any[]) =>
+                (this.allFlights = flights.map((value: Flight) => {
+                    value.launchDate = new Date(value.launchDate);
+                    return value;
+                })),
             () => {},
             () => (this.state = State.Default)
         );

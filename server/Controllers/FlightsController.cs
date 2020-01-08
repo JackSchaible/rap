@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Rap.Data;
+using Rap.Models;
+using Rap.Services.Interfaces;
 
 namespace RapServer.Controllers
 {
@@ -12,18 +11,15 @@ namespace RapServer.Controllers
     public class FlightsController : ControllerBase
     {
         private readonly ILogger<FlightsController> _logger;
-        private readonly ApplicationDbContext _ctx;
+        private readonly IFlightService _service;
 
-        public FlightsController(ILogger<FlightsController> logger, ApplicationDbContext ctx)
+        public FlightsController(ILogger<FlightsController> logger, IFlightService service)
         {
             _logger = logger;
-            _ctx = ctx;
+            _service = service;
         }
 
         [HttpGet]
-        public IEnumerable<Flight> Get()
-        {
-            return _ctx.Flights;
-        }
+        public List<FlightModel> Get() => _service.GetFlights();
     }
 }

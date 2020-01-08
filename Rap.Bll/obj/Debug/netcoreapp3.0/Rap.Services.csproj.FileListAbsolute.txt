@@ -1,0 +1,13 @@
+C:\git\rap\Rap.Bll\bin\Debug\netcoreapp3.0\Rap.Data.dll
+C:\git\rap\Rap.Bll\bin\Debug\netcoreapp3.0\Rap.Models.dll
+C:\git\rap\Rap.Bll\obj\Debug\netcoreapp3.0\Rap.Services.csprojAssemblyReference.cache
+C:\git\rap\Rap.Bll\obj\Debug\netcoreapp3.0\Rap.Services.AssemblyInfoInputs.cache
+C:\git\rap\Rap.Bll\obj\Debug\netcoreapp3.0\Rap.Services.AssemblyInfo.cs
+C:\git\rap\Rap.Bll\bin\Debug\netcoreapp3.0\Rap.Services.deps.json
+C:\git\rap\Rap.Bll\bin\Debug\netcoreapp3.0\Rap.Services.dll
+C:\git\rap\Rap.Bll\bin\Debug\netcoreapp3.0\Rap.Services.pdb
+C:\git\rap\Rap.Bll\bin\Debug\netcoreapp3.0\Rap.Models.pdb
+C:\git\rap\Rap.Bll\bin\Debug\netcoreapp3.0\Rap.Data.pdb
+C:\git\rap\Rap.Bll\obj\Debug\netcoreapp3.0\Rap.Services.csproj.CopyComplete
+C:\git\rap\Rap.Bll\obj\Debug\netcoreapp3.0\Rap.Services.dll
+C:\git\rap\Rap.Bll\obj\Debug\netcoreapp3.0\Rap.Services.pdb

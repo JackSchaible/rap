@@ -1,0 +1,11 @@
+C:\git\rap\Rap.Models\bin\Debug\netcoreapp3.0\Rap.Models.deps.json
+C:\git\rap\Rap.Models\bin\Debug\netcoreapp3.0\Rap.Models.dll
+C:\git\rap\Rap.Models\obj\Debug\netcoreapp3.0\Rap.Models.csprojAssemblyReference.cache
+C:\git\rap\Rap.Models\obj\Debug\netcoreapp3.0\Rap.Models.AssemblyInfoInputs.cache
+C:\git\rap\Rap.Models\obj\Debug\netcoreapp3.0\Rap.Models.AssemblyInfo.cs
+C:\git\rap\Rap.Models\bin\Debug\netcoreapp3.0\Rap.Models.pdb
+C:\git\rap\Rap.Models\obj\Debug\netcoreapp3.0\Rap.Models.dll
+C:\git\rap\Rap.Models\obj\Debug\netcoreapp3.0\Rap.Models.pdb
+C:\git\rap\Rap.Models\bin\Debug\netcoreapp3.0\Rap.Data.dll
+C:\git\rap\Rap.Models\bin\Debug\netcoreapp3.0\Rap.Data.pdb
+C:\git\rap\Rap.Models\obj\Debug\netcoreapp3.0\Rap.Models.csproj.CopyComplete

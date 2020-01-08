@@ -1,17 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Rap.Api.Converters;
 using Rap.Data;
 using Rap.Data.Initializer;
+using Rap.Services.Implementations;
+using Rap.Services.Interfaces;
+using System;
+using System.Linq;
+using System.Reflection;
 
 namespace RapServer
 {
@@ -33,8 +32,13 @@ namespace RapServer
             ConfigureDb(services);
             ConfigureCors(services);
             ConfigureBllServices(services);
+            ConfigureAutomapper(services);
 
-            services.AddControllers();
+            services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.Converters.Add(new DateTimeConverter());
+                }); ;
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ApplicationDbContext context, IDbInitializer initializer)
@@ -77,8 +81,17 @@ namespace RapServer
 
         private void ConfigureBllServices(IServiceCollection services)
         {
-            //services.AddTransient<ISpellService, SpellService>();
+            services.AddTransient<IFlightService, FlightService>();
         }
 
+        private void ConfigureAutomapper(IServiceCollection services)
+        {
+            Assembly thisAssembly = AppDomain.CurrentDomain.GetAssemblies().Single(a => a.GetName().Name == "Rap.Api");
+            AssemblyName[] assemblies = thisAssembly.GetReferencedAssemblies();
+            AssemblyName name = assemblies.Single(a => a.Name == "Rap.Models");
+            Assembly modelsAssembly = Assembly.Load(name);
+
+            services.AddAutoMapper(modelsAssembly);
+        }
     }
 }

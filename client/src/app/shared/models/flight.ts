@@ -9,4 +9,6 @@ export class Flight {
     public landed: boolean;
     public reused: boolean;
     public reddit: boolean;
+
+    public shouldCollapse: boolean;
 }
