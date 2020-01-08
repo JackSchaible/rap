@@ -10,8 +10,20 @@ import { ToastrService } from "ngx-toastr";
     providedIn: "root"
 })
 export class StateService {
-    @observable
-    public flights: Flight[];
+    @computed
+    public get flights(): Flight[] {
+        let flights: Flight[] = this.allFlights;
+
+        // Sort the flights
+        flights = flights.sort((a: Flight, b: Flight): number => {
+            return a.id - b.id;
+        });
+
+        // Paginate the flights
+        flights = flights.slice(0, this.pageSize * this.currentPage);
+
+        return flights;
+    }
 
     @observable
     public state: State;
@@ -19,8 +31,12 @@ export class StateService {
     @observable
     public filterOptions: FilterOptions;
 
+    private allFlights: Flight[];
+    private pageSize = 10;
+    private currentPage = 1;
+
     constructor(private http: HttpService, private toastr: ToastrService) {
-        this.flights = [];
+        this.allFlights = [];
         this.state = State.Default;
         this.filterOptions = {
             landed: false,
@@ -51,10 +67,15 @@ export class StateService {
         );
     }
 
+    @action()
+    public nextPage() {
+        this.currentPage++;
+    }
+
     // Handle the results specially so the DOM doesn't have to refresh everytime and re-load all the badge images
     private handleResults(flights: Flight[]) {
         // Remove flights that aren't in the filter list
-        this.flights = this.flights.filter((flight: Flight) =>
+        this.allFlights = this.flights.filter((flight: Flight) =>
             flights.find(
                 (flightToFind: Flight) => flightToFind.id === flight.id
             )
@@ -69,17 +90,12 @@ export class StateService {
         );
 
         // Add the new flights to the list
-        this.flights = this.flights.concat(
+        this.allFlights = this.flights.concat(
             flights.map((value: Flight) => {
                 value.launchDate = new Date(value.launchDate);
                 return value;
             })
         );
-
-        // Order the results
-        this.flights = this.flights.sort((a: Flight, b: Flight): number => {
-            return a.id - b.id;
-        });
     }
 
     private handleError() {
