@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rap.Api", "Rap.Api.csproj",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rap.Data", "Rap.Data\Rap.Data.csproj", "{901906A1-CF53-48AB-BF60-28A3BE7B9B2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rap.Services", "..\Rap.Bll\Rap.Services.csproj", "{C3FEE146-9D53-4288-ADD7-0E5718389982}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rap.Services", "Rap.Bll\Rap.Services.csproj", "{C3FEE146-9D53-4288-ADD7-0E5718389982}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rap.Models", "..\Rap.Models\Rap.Models.csproj", "{A488EF6C-EE4A-4EF9-89CE-7E6D269107F9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rap.Models", "Rap.Models\Rap.Models.csproj", "{A488EF6C-EE4A-4EF9-89CE-7E6D269107F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
