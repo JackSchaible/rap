@@ -1,34 +1,36 @@
+@import "~ngx-toastr/toastr";
+
 @import "./_vars.scss";
 @import "./_fonts.scss";
 @import "./_tools.scss";
 
 body {
-	.background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: -1;
-	}
+    .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+    }
 }
 
 main {
-	margin: 0 auto;
+    margin: 0 auto;
 
-	@include breakpoint-sm-max {
-		max-width: 960px;
-	}
+    @include breakpoint-sm-max {
+        max-width: 960px;
+    }
 
-	@include breakpoint-md-max {
-		max-width: 1024px;
-	}
+    @include breakpoint-md-max {
+        max-width: 1024px;
+    }
 
-	@include breakpoint-lg-max {
-		max-width: 1088px;
-	}
+    @include breakpoint-lg-max {
+        max-width: 1088px;
+    }
 
-	@include breakpoint-xl {
-		max-width: 1152px;
-	}
+    @include breakpoint-xl {
+        max-width: 1152px;
+    }
 }

@@ -8,16 +8,23 @@ import { RefreshButtonComponent } from "./refresh-button/refresh-button.componen
 import { HttpClientModule } from "@angular/common/http";
 import { CheckboxComponent } from "./checkbox/checkbox.component";
 import { FormsModule } from "@angular/forms";
-import { TableComponent } from './table/table.component';
+import { TableComponent } from "./table/table.component";
+import { ToastrModule } from "ngx-toastr";
 
 @NgModule({
-    declarations: [AppComponent, RefreshButtonComponent, CheckboxComponent, TableComponent],
+    declarations: [
+        AppComponent,
+        RefreshButtonComponent,
+        CheckboxComponent,
+        TableComponent
+    ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         MobxAngularModule,
         HttpClientModule,
         FormsModule,
+        ToastrModule.forRoot(),
         AppRoutingModule
     ],
     providers: [],
