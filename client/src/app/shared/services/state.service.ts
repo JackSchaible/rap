@@ -51,10 +51,34 @@ export class StateService {
         );
     }
 
+    // Handle the results specially so the DOM doesn't have to refresh everytime and re-load all the badge images
     private handleResults(flights: Flight[]) {
-        this.flights = flights.map((value: Flight) => {
-            value.launchDate = new Date(value.launchDate);
-            return value;
+        // Remove flights that aren't in the filter list
+        this.flights = this.flights.filter((flight: Flight) =>
+            flights.find(
+                (flightToFind: Flight) => flightToFind.id === flight.id
+            )
+        );
+
+        // Don't add flights we already have
+        flights = flights.filter(
+            (flight: Flight) =>
+                !this.flights.find(
+                    (flightToFind: Flight) => flightToFind.id === flight.id
+                )
+        );
+
+        // Add the new flights to the list
+        this.flights = this.flights.concat(
+            flights.map((value: Flight) => {
+                value.launchDate = new Date(value.launchDate);
+                return value;
+            })
+        );
+
+        // Order the results
+        this.flights = this.flights.sort((a: Flight, b: Flight): number => {
+            return a.id - b.id;
         });
     }
 
