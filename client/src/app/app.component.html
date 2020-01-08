@@ -7,9 +7,9 @@
 		<div class="spacer"></div>
 
 		<div>
-			<app-checkbox label="Land Success" [(checked)]="state.filterOptions.landed"></app-checkbox>
-			<app-checkbox label="Reused" [(checked)]="state.filterOptions.reused"></app-checkbox>
-			<app-checkbox label="With Reddit" [(checked)]="state.filterOptions.reddit"></app-checkbox>
+			<app-checkbox [propertyToFilter]="'landed'" label="Land Success"></app-checkbox>
+			<app-checkbox [propertyToFilter]="'reused'" label="Reused"></app-checkbox>
+			<app-checkbox [propertyToFilter]="'reddit'" label="With Reddit"></app-checkbox>
 		</div>
 	</header>
 	<app-table></app-table>

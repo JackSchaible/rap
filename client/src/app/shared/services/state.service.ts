@@ -9,41 +9,8 @@ import { FilterOptions } from "../models/filterOptions";
     providedIn: "root"
 })
 export class StateService {
-    private allFlights: Flight[];
-
-    @computed
-    get filteredFlights() {
-        return this.allFlights.filter((flight: Flight): boolean => {
-            if (
-                !this.filterOptions.landed &&
-                !this.filterOptions.reddit &&
-                !this.filterOptions.reused
-            )
-                return true;
-
-            let filterOut = false;
-
-            if (this.filterOptions.landed) {
-                if (!flight.landed) filterOut = true;
-            } else {
-                if (flight.landed) filterOut = true;
-            }
-
-            if (this.filterOptions.reddit) {
-                if (!flight.reddit) filterOut = true;
-            } else {
-                if (flight.reddit) filterOut = true;
-            }
-
-            if (this.filterOptions.reused) {
-                if (!flight.reused) filterOut = true;
-            } else {
-                if (flight.reused) filterOut = true;
-            }
-
-            return filterOut;
-        });
-    }
+    @observable
+    public flights: Flight[];
 
     @observable
     public state: State;
@@ -51,13 +18,8 @@ export class StateService {
     @observable
     public filterOptions: FilterOptions;
 
-    @computed
-    get flights() {
-        return this.filteredFlights;
-    }
-
     constructor(private http: HttpService) {
-        this.allFlights = [];
+        this.flights = [];
         this.state = State.Default;
         this.filterOptions = {
             landed: false,
@@ -70,13 +32,29 @@ export class StateService {
     public refresh() {
         this.state = State.Loading;
         this.http.getListing().subscribe(
-            (flights: any[]) =>
-                (this.allFlights = flights.map((value: Flight) => {
-                    value.launchDate = new Date(value.launchDate);
-                    return value;
-                })),
+            (flights: Flight[]) => this.handleResults(flights),
+            //TODO: handle errors
             () => {},
             () => (this.state = State.Default)
         );
+    }
+
+    @action()
+    public changeFilter(property: string, on: boolean) {
+        this.state = State.Loading;
+        this.filterOptions[property] = on;
+
+        this.http.filter(this.filterOptions).subscribe(
+            (flights: Flight[]) => this.handleResults(flights),
+            () => {},
+            () => (this.state = State.Default)
+        );
+    }
+
+    private handleResults(flights: Flight[]) {
+        this.flights = flights.map((value: Flight) => {
+            value.launchDate = new Date(value.launchDate);
+            return value;
+        });
     }
 }

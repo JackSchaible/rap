@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Rap.Models;
@@ -21,5 +22,22 @@ namespace RapServer.Controllers
 
         [HttpGet]
         public List<FlightModel> Get() => _service.GetFlights();
+
+        [HttpPost]
+        public List<FlightModel> Post(FilterModel filters)
+        {
+            List<FlightModel> flights = Get();
+
+            if (filters.Landed)
+                flights = flights.Where(f => f.Landed).ToList();
+
+            if (filters.Reused)
+                flights = flights.Where(f => f.Reused).ToList();
+
+            if (filters.Reddit)
+                flights = flights.Where(f => f.Reddit).ToList();
+
+            return flights;
+        }
     }
 }

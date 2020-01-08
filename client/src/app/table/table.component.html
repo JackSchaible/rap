@@ -6,7 +6,7 @@
 	<p class="header">Details</p>
 	<p class="header">ID</p>
 	<p class="header">Article</p>
-	<ng-container *ngFor="let flight of state.filteredFlights">
+	<ng-container *ngFor="let flight of state.flights">
 		<div (click)="toggleCollapse(flight)" class="first-cell">
 			<img [src]="flight.badge" />
 		</div>
