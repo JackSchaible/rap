@@ -1,10 +1,10 @@
 <div class="grid">
 	<p class="header">Badge</p>
-	<p class="header">Rocket Name</p>
-	<p class="header">Rocket Type</p>
-	<p class="header">Launch Date</p>
+	<p class="header sortable" (click)="sort('name')" [class.asc]="state.sortColumn === 'name' && state.sortAscending" [class.desc]="state.sortColumn === 'name' && !state.sortAscending">Rocket Name</p>
+	<p class="header sortable" (click)="sort('type')" [class.asc]="state.sortColumn === 'type' && state.sortAscending" [class.desc]="state.sortColumn === 'type' && !state.sortAscending">Rocket Type</p>
+	<p class="header sortable" (click)="sort('date')" [class.asc]="state.sortColumn === 'date' && state.sortAscending" [class.desc]="state.sortColumn === 'date' && !state.sortAscending">Launch Date</p>
 	<p class="header">Details</p>
-	<p class="header">ID</p>
+	<p class="header sortable" (click)="sort('id')" [class.asc]="state.sortColumn === 'id' && state.sortAscending" [class.desc]="state.sortColumn === 'id' && !state.sortAscending">ID</p>
 	<p class="header">Article</p>
 	<ng-container *ngFor="let flight of state.flights">
 		<div (click)="toggleCollapse(flight)" class="first-cell">

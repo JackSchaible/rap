@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { StateService } from "../shared/services/state.service";
 import { Flight } from "../shared/models/flight";
+import { SortableField } from "../shared/models/sortModel";
 
 @Component({
     selector: "app-table",
@@ -36,5 +37,9 @@ export class TableComponent implements OnInit {
 
     public toggleCollapse(flight: Flight) {
         flight.shouldCollapse = !flight.shouldCollapse;
+    }
+
+    public sort(field: SortableField) {
+        this.state.sort(field);
     }
 }
