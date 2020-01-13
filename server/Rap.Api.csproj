@@ -5,16 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Rap.Bll\**" />
+    <Compile Remove="Rap.Services\**" />
     <Compile Remove="Rap.Data\**" />
     <Compile Remove="Rap.Models\**" />
     <Content Remove="Rap.Bll\**" />
     <Content Remove="Rap.Data\**" />
     <Content Remove="Rap.Models\**" />
-    <EmbeddedResource Remove="Rap.Bll\**" />
+    <EmbeddedResource Remove="Rap.Services\**" />
     <EmbeddedResource Remove="Rap.Data\**" />
     <EmbeddedResource Remove="Rap.Models\**" />
-    <None Remove="Rap.Bll\**" />
+    <None Remove="Rap.Services\**" />
     <None Remove="Rap.Data\**" />
     <None Remove="Rap.Models\**" />
   </ItemGroup>
@@ -24,8 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Rap.Bll\Rap.Services.csproj" />
-    <ProjectReference Include="Rap.Bll\Rap.Services.csproj" />
+    <ProjectReference Include="Rap.Services\Rap.Services.csproj" />
     <ProjectReference Include="Rap.Data\Rap.Data.csproj" />
   </ItemGroup>
 

@@ -5,7 +5,7 @@ import { State } from "../models/enums";
 import { Flight } from "../models/flight";
 import { FilterOptions } from "../models/filterOptions";
 import { ToastrService } from "ngx-toastr";
-import { SortMode, SortableField } from "../models/sortModel";
+import { SortableField } from "../models/sortModel";
 
 @Injectable({
     providedIn: "root"
@@ -83,6 +83,10 @@ export class StateService {
     @action()
     public sort(field: SortableField) {
         if (field === this.sortColumn) this.sortAscending = !this.sortAscending;
+        else {
+            this.sortColumn = field;
+            this.sortAscending = false;
+        }
     }
 
     // Handle the results specially so the DOM doesn't have to refresh everytime and re-load all the badge images
@@ -178,8 +182,8 @@ export class StateService {
     }
 
     private getSortNumberString(a: string, b: string, asc: boolean): number {
-        if (a < b) return asc ? 1 : -1;
-        if (a > b) return asc ? 1 : -1;
+        if (a > b) return asc ? -1 : 1;
+        if (b > a) return asc ? 1 : -1;
         return 0;
     }
 }

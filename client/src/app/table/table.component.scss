@@ -19,20 +19,24 @@
             font-size: 1rem;
             margin-top: 0;
             margin-bottom: 0;
+            display: flex;
 
             &.sortable {
                 cursor: pointer;
 
-                &::before {
-                    padding-right: 0.25rem;
-
-                    &.desc {
+                &.desc {
+                    &::before {
                         content: "^";
                         transform: rotate(180deg);
+                        margin-right: 0.25rem;
+                        display: inline-block;
                     }
+                }
 
-                    &.asc {
+                &.asc {
+                    &::before {
                         content: "^";
+                        margin-right: 0.25rem;
                     }
                 }
             }

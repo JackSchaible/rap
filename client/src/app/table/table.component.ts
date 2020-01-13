@@ -38,8 +38,4 @@ export class TableComponent implements OnInit {
     public toggleCollapse(flight: Flight) {
         flight.shouldCollapse = !flight.shouldCollapse;
     }
-
-    public sort(field: SortableField) {
-        this.state.sort(field);
-    }
 }
