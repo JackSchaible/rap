@@ -48,7 +48,7 @@ namespace Rap.Api.Tests
                             ArticleLink = "https://www.space.com/2196-spacex-inaugural-falcon-1-rocket-lost-launch.html",
                             MissionName = "TESS",
                             RedditCampaign = true,
-                            Reuse = false,
+                            Reuse = true,
                             RocketName = "Merlin A",
                             FlightNumber = 2,
                             MissionPatch = "",
@@ -57,7 +57,7 @@ namespace Rap.Api.Tests
                         new Flight
                         {
                             Details = "Engine failure at 33 seconds and loss of vehicle",
-                            LandSuccess = false,
+                            LandSuccess = true,
                             LaunchDateUTC = new DateTime(2006, 03, 24, 22, 30, 0),
                             ArticleLink = "https://www.space.com/2196-spacex-inaugural-falcon-1-rocket-lost-launch.html",
                             MissionName = "CRS-14",
@@ -71,12 +71,12 @@ namespace Rap.Api.Tests
                         new Flight
                         {
                             Details = "Engine failure at 33 seconds and loss of vehicle",
-                            LandSuccess = false,
+                            LandSuccess = true,
                             LaunchDateUTC = new DateTime(2006, 03, 24, 22, 30, 0),
                             ArticleLink = "https://www.space.com/2196-spacex-inaugural-falcon-1-rocket-lost-launch.html",
                             MissionName = "Iridium NEXT Mission 5",
                             RedditCampaign = true,
-                            Reuse = false,
+                            Reuse = true,
                             RocketName = "Merlin A",
                             FlightNumber = 4,
                             MissionPatch = "",
@@ -89,7 +89,7 @@ namespace Rap.Api.Tests
                             LaunchDateUTC = new DateTime(2006, 03, 24, 22, 30, 0),
                             ArticleLink = "https://www.space.com/2196-spacex-inaugural-falcon-1-rocket-lost-launch.html",
                             MissionName = "Hispasat 30W-6",
-                            RedditCampaign = true,
+                            RedditCampaign = false,
                             Reuse = false,
                             RocketName = "Merlin A",
                             FlightNumber = 5,

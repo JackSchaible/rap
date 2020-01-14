@@ -1,4 +1,5 @@
 using Rap.Api.Tests.Fakes;
+using Rap.Models;
 using RapServer.Controllers;
 using Xunit;
 
@@ -26,6 +27,126 @@ namespace Rap.Api.Tests
             Assert.Equal("CRS-14", results[2].Name);
             Assert.Equal("Iridium NEXT Mission 5", results[3].Name);
             Assert.Equal("Hispasat 30W-6", results[4].Name);
+        }
+
+        [Fact]
+        public void FilterAllFalseTest()
+        {
+            var filterModel = new FilterModel
+            {
+                Landed = false,
+                Reddit = false,
+                Reused = false
+            };
+
+            var results = _controller.Post(filterModel);
+
+            Assert.Empty(results);
+        }
+
+        [Fact]
+        public void FilterLandedTest()
+        {
+            var filterModel = new FilterModel
+            {
+                Landed = true,
+                Reddit = false,
+                Reused = false
+            };
+
+            var results = _controller.Post(filterModel);
+
+            Assert.Single(results);
+        }
+
+        [Fact]
+        public void FilterLandedAndRedditTest()
+        {
+            var filterModel = new FilterModel
+            {
+                Landed = true,
+                Reddit = true,
+                Reused = false
+            };
+
+            var results = _controller.Post(filterModel);
+
+            Assert.Single(results);
+        }
+
+        [Fact]
+        public void FilterAllTrueTest()
+        {
+            var filterModel = new FilterModel
+            {
+                Landed = true,
+                Reddit = true,
+                Reused = true
+            };
+
+            var results = _controller.Post(filterModel);
+
+            Assert.Single(results);
+        }
+
+        [Fact]
+        public void FilterLandedAndReusedTest()
+        {
+            var filterModel = new FilterModel
+            {
+                Landed = true,
+                Reddit = false,
+                Reused = true
+            };
+
+            var results = _controller.Post(filterModel);
+
+            Assert.Empty(results);
+        }
+
+        [Fact]
+        public void FilterRedditAndReusedTest()
+        {
+            var filterModel = new FilterModel
+            {
+                Landed = false,
+                Reddit = true,
+                Reused = true
+            };
+
+            var results = _controller.Post(filterModel);
+
+            Assert.Empty(results);
+        }
+
+        [Fact]
+        public void FilterRedditTest()
+        {
+            var filterModel = new FilterModel
+            {
+                Landed = false,
+                Reddit = true,
+                Reused = false
+            };
+
+            var results = _controller.Post(filterModel);
+
+            Assert.Empty(results);
+        }
+
+        [Fact]
+        public void FilterReusedTest()
+        {
+            var filterModel = new FilterModel
+            {
+                Landed = false,
+                Reddit = false,
+                Reused = true
+            };
+
+            var results = _controller.Post(filterModel);
+
+            Assert.Empty(results);
         }
     }
 }
