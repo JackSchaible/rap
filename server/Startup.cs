@@ -1,6 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Rap.Api.Converters;
@@ -63,7 +64,9 @@ namespace RapServer
 
         private void ConfigureDb(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>();
+            services.AddDbContext<ApplicationDbContext>(o => 
+                o.UseSqlServer(@"Server=.;Database=rap;Trusted_Connection=True;",
+                    opts => opts.EnableRetryOnFailure(3)));
             services.Configure<InitializerOptions>(o => o.RootPath = _env.ContentRootPath);
             services.AddScoped<IDbInitializer, DbInitializer>();
         }

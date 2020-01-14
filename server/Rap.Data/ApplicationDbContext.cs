@@ -6,11 +6,9 @@ namespace Rap.Data
     {
         public DbSet<Flight> Flights { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options)
         {
-            optionsBuilder
-                .UseSqlServer(@"Server=.;Database=rap;Trusted_Connection=True;",
-                    opts => opts.EnableRetryOnFailure(3));
         }
     }
 }

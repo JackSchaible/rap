@@ -5,18 +5,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Rap.Api.Tests\**" />
     <Compile Remove="Rap.Services\**" />
     <Compile Remove="Rap.Data\**" />
     <Compile Remove="Rap.Models\**" />
+    <Compile Remove="Tests\**" />
+    <Content Remove="Rap.Api.Tests\**" />
     <Content Remove="Rap.Bll\**" />
     <Content Remove="Rap.Data\**" />
     <Content Remove="Rap.Models\**" />
+    <Content Remove="Rap.Services\**" />
+    <Content Remove="Tests\**" />
+    <EmbeddedResource Remove="Rap.Api.Tests\**" />
     <EmbeddedResource Remove="Rap.Services\**" />
     <EmbeddedResource Remove="Rap.Data\**" />
     <EmbeddedResource Remove="Rap.Models\**" />
+    <EmbeddedResource Remove="Tests\**" />
+    <None Remove="Rap.Api.Tests\**" />
     <None Remove="Rap.Services\**" />
     <None Remove="Rap.Data\**" />
     <None Remove="Rap.Models\**" />
+    <None Remove="Tests\**" />
   </ItemGroup>
 
   <ItemGroup>
